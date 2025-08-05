@@ -1,0 +1,23 @@
+{
+  "name": "my-fastify-app",
+  "version": "1.0.0",
+  "description": "A Fastify application",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@prisma/client": "^6.13.0",
+    "fastify": "^4.29.1",
+    "fastify-plugin": "^5.0.1",
+    "prisma": "^6.13.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
