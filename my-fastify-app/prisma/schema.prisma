@@ -20,7 +20,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+  notes    Note[]
+}
+
 model Note {
-  id    Int    @id @default(autoincrement())
-  text  String
+  id     Int    @id @default(autoincrement())
+  text   String
+  userId Int
+  user   User   @relation(fields: [userId], references: [id])
 }
