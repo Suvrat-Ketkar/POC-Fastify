@@ -3,3 +3,5 @@ node_modules/
 .env
 
 my-fastify-app/src/generated/prisma/
+
+.vscode
