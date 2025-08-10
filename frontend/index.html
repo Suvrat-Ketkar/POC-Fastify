@@ -7,8 +7,51 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div id="errorToast" class="toast"></div>
+  
+  <div class="auth-container" id="authContainer">
     <h1>Notes App</h1>
+    
+    <!-- Login Form -->
+    <div id="loginForm" class="auth-form">
+      <h2>Login</h2>
+      <form onsubmit="return handleLogin(event)">
+        <div class="form-group">
+          <input type="email" id="loginEmail" placeholder="Email" required />
+        </div>
+        <div class="form-group">
+          <input type="password" id="loginPassword" placeholder="Password" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" onclick="toggleAuthForm()">Register here</a></p>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerForm" class="auth-form hidden">
+      <h2>Register</h2>
+      <form onsubmit="return handleRegister(event)">
+        <div class="form-group">
+          <input type="email" id="registerEmail" placeholder="Email" required />
+        </div>
+        <div class="form-group">
+          <input type="password" id="registerPassword" placeholder="Password" required />
+        </div>
+        <div class="form-group">
+          <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="#" onclick="toggleAuthForm()">Login here</a></p>
+    </div>
+  </div>
+
+  <!-- Notes App Container (Hidden until logged in) -->
+  <div id="appContainer" class="container hidden">
+    <div class="header">
+      <h1>My Notes</h1>
+      <button onclick="handleLogout()" class="logout-btn">Logout</button>
+    </div>
     
     <!-- Single Note Form -->
     <form id="noteForm">
